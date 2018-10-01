@@ -13,16 +13,14 @@ class Stack {
         if(this.minItem.length <= 0 || this.minItem[this.minItem.length-1] > val) {
             this.minItem.push(val);
         }
+        else {
+            this.minItem.push(this.minItem[this.minItem.length-1]);
+        }
     }
 
     pop() {
         if(this.item.length > 0) {
-            if(this.item[this.minItem.length-1] === this.minItem[this.minItem.length-1]) {
-                this.minItem.pop();
-            }
-            else {
-                this.push(this.item[this.minItem.length-1]);
-            }
+            this.minItem.pop();
             return this.item.pop();
         }
         else {
